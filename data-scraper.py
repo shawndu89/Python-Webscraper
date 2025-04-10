@@ -1,7 +1,7 @@
     pip install requests beautifulsoup4
 
     import requests
-    url = 'your_target_url'
+    url = https://finance.yahoo.com
     response = requests.get(url)
     html_content = response.text
 
@@ -9,7 +9,7 @@
     soup = BeautifulSoup(html_content, 'html.parser')
 
     # Find all elements with a specific tag
-    elements = soup.find_all('tag_name')
+    elements = soup.find_all('symbol', 'price')
     # Find an element by ID
     element = soup.find(id='element_id')
    # Find elements by class
@@ -24,7 +24,7 @@
     with open('data.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
     # Write header
-        writer.writerow(['column1', 'column2'])
+        writer.writerow(['Symbol', 'Price'])
     # Write data rows
         for item in data:
-            writer.writerow([item['column1'], item['column2']])
+            writer.writerow([item['Symbol'], item['Price']])
