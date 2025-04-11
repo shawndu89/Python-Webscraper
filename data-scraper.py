@@ -1,22 +1,22 @@
     pip install requests beautifulsoup4
 
     import requests
+    from bs4 import BeautifulSoup
+
     url = https://finance.yahoo.com
     response = requests.get(url)
     html_content = response.text
-
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup(html_content, 'html.parser')
-
+ 
     # Check if the request was successful
     if response.status_code == 200:
         # Parse the HTML content
-        soup = BeautifulSoup(response.content, 'html.parser')
-
-
+        soup = BeautifulSoup(html_content, 'html.parser')
 
     # Find all elements with a specific tag
-    elements = soup.find_all('symbol', 'price')
+    elements = soup.find_all('a')
+    for element in elements
+    print(element.get('href'))
+
     # Find an element by ID
     element = soup.find(id='element_id')
    # Find elements by class
