@@ -12,11 +12,15 @@
         # Parse the HTML content
         soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Find all elements with a specific tag
-    elements = soup.find_all('a')
-    for element in elements
-    print(element.get('href'))
+        # Find all elements with a specific tag
+        elements = soup.find_all('a')
+        for element in elements
+        print(element.get('href'))
 
+    else:
+        print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+
+########
     # Find an element by ID
     element = soup.find(id='element_id')
    # Find elements by class
@@ -35,3 +39,4 @@
     # Write data rows
         for item in data:
             writer.writerow([item['Symbol'], item['Price']])
+########
