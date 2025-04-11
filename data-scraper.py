@@ -8,6 +8,13 @@
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html_content, 'html.parser')
 
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the HTML content
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+
+
     # Find all elements with a specific tag
     elements = soup.find_all('symbol', 'price')
     # Find an element by ID
